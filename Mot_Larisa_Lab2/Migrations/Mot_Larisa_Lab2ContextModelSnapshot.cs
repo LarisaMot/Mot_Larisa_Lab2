@@ -51,7 +51,7 @@ namespace Mot_Larisa_Lab2.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
-                    b.Property<int>("AuthorId")
+                    b.Property<int?>("AuthorID")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Price")
@@ -69,7 +69,7 @@ namespace Mot_Larisa_Lab2.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("AuthorId");
+                    b.HasIndex("AuthorID");
 
                     b.HasIndex("PublisherID");
 
@@ -97,9 +97,7 @@ namespace Mot_Larisa_Lab2.Migrations
                 {
                     b.HasOne("Mot_Larisa_Lab2.Models.Author", "Author")
                         .WithMany("Books")
-                        .HasForeignKey("AuthorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("AuthorID");
 
                     b.HasOne("Mot_Larisa_Lab2.Models.Publisher", "Publisher")
                         .WithMany("Books")
