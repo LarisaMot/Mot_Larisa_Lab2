@@ -7,6 +7,8 @@ namespace Mot_Larisa_Lab2.Models
 {
     public class Book
     {
+        private Author? author;
+
         public int ID { get; set; }
 
         [Display(Name = "Book Title")]
@@ -22,6 +24,9 @@ namespace Mot_Larisa_Lab2.Models
         public Publisher? Publisher { get; set; }
 
         public int? AuthorID { get; set; }
-        public Author? Author { get; set; }
+        public Author? Author { get => author; set => author = value; }
+
+        public ICollection<BookCategory>? BookCategories { get; set; } = new List<BookCategory>();
     }
 }
+

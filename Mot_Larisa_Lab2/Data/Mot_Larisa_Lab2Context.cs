@@ -18,5 +18,6 @@ namespace Mot_Larisa_Lab2.Data
         public DbSet<Mot_Larisa_Lab2.Models.Publisher> Publisher { get; set; } = default!;
 
         public DbSet<Mot_Larisa_Lab2.Models.Author> Author { get; set; } = default!;
+        public DbSet<Mot_Larisa_Lab2.Models.Category> Category { get; set; } = default!;
     }
 }
